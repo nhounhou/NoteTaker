@@ -10,16 +10,16 @@ const PORT = 3000;
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static(__dirname));
+app.use(express.static('public'));
 
-fs.readFile("Develop/db/db.json","utf8", (err, data) => {
+fs.readFile("db/db.json","utf8", (err, data) => {
     if (err) throw err;
     var notes = JSON.parse(data);
     console.log(notes);
     // Client GET Routes
-    app.get('/', (req, res) => res.sendFile(path.join(__dirname, '/Develop/public/index.html')));
+    app.get('/', (req, res) => res.sendFile(path.join(__dirname, '/public/index.html')));
 
-    app.get('/notes', (req, res) => res.sendFile(path.join(__dirname, '/Develop/public/notes.html')));
+    app.get('/notes', (req, res) => res.sendFile(path.join(__dirname, '/public/notes.html')));
 
     // API Routes
     app.get('/api/notes', (req, res) => res.json(notes));
@@ -40,7 +40,7 @@ fs.readFile("Develop/db/db.json","utf8", (err, data) => {
     });
 
     function writeDB(type){
-        fs.writeFile("Develop/db/db.json",JSON.stringify(notes,'\t'),err => {
+        fs.writeFile("db/db.json",JSON.stringify(notes,'\t'),err => {
             if (err) throw err;
             return true;
         });
