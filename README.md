@@ -6,6 +6,8 @@ Note Taker is an application that can be used to write and save notes using Expr
 - [User Story](#user-story)
 - [Acceptance Criteria](#acceptance-criteria)
 - [Mock Up](#mock-up)
+- [Installation](#installation)
+- [Application Launch](#application-launch)
 
 # Assignment
 Your assignment is to modify starter code to create an application called Note Taker that can be used to write and save notes. This application will use an Express.js back end and will save and retrieve note data from a JSON file.
@@ -38,3 +40,10 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 The following images show the web application's appearance and functionality:  
 ![demo01](./Assets/11-express-homework-demo-01.png)
 ![demo02](./Assets/11-express-homework-demo-02.png)
+
+# Installation
+```npm init -y``` to initiate the package.json file
+```npm install express``` to install the Express module/package
+
+# Application Launch
+[Note Take Application]()
