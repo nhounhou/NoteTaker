@@ -3,6 +3,8 @@ let noteText;
 let saveNoteBtn;
 let newNoteBtn;
 let noteList;
+let noteItems;
+
 console.log('index.js');
 console.log(`pathname: ${window.location.pathname}`);
 if (window.location.pathname === '/notes') {
@@ -11,6 +13,7 @@ if (window.location.pathname === '/notes') {
   saveNoteBtn = document.querySelector('.save-note');
   newNoteBtn = document.querySelector('.new-note');
   noteList = document.querySelectorAll('.list-container .list-group');
+  
 }
 
 // Show an element
@@ -66,7 +69,10 @@ const renderActiveNote = () => {
 };
 
 const handleNoteSave = () => {
+  noteItems = document.querySelectorAll('.list-group-item').length;
+  console.log(noteItems);
   const newNote = {
+    id: noteItems,
     title: noteTitle.value,
     text: noteText.value,
   };
@@ -83,7 +89,9 @@ const handleNoteDelete = (e) => {
 
   const note = e.target;
   const noteId = JSON.parse(note.parentElement.getAttribute('data-note')).id;
-
+  console.log(`note=${note}`);
+  console.log(`activenoteid=${activeNote.id}`);
+  console.log(`delete Note, noteId=${noteId}`);
   if (activeNote.id === noteId) {
     activeNote = {};
   }

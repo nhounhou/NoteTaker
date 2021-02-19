@@ -30,13 +30,17 @@ fs.readFile("db/db.json","utf8", (err, data) => {
 
     app.post('/api/notes', (req, res) => {
         let newNote = req.body;
+        console.log(`Adding Note ${JSON.stringify(newNote)}`);
         notes.push(newNote);
-        writeDB('added')        
+        writeDB('added');
+        return res.json({});
     });
 
     app.delete('/api/notes/:id', (req, res) => {
+        console.log(`delete Route with id=${req.params.id}`)
         notes.splice(req.params.id,1);
         writeDB('deleted');
+        return res.json({});
     });
 
     function writeDB(type){
