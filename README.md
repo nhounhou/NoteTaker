@@ -42,8 +42,8 @@ The following images show the web application's appearance and functionality:
 ![demo02](./Assets/11-express-homework-demo-02.png)
 
 # Installation
-```npm init -y``` to initiate the package.json file
+```npm init -y``` to initiate the package.json file  
 ```npm install express``` to install the Express module/package
 
 # Application Launch
-[Note Take Application]()
+[Note Take Application](https://bcsnotetaker.herokuapp.com/)
