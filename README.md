@@ -8,6 +8,7 @@ Note Taker is an application that can be used to write and save notes using Expr
 - [Mock Up](#mock-up)
 - [Installation](#installation)
 - [Application Launch](#application-launch)
+- [Video](#video)
 
 # Assignment
 Your assignment is to modify starter code to create an application called Note Taker that can be used to write and save notes. This application will use an Express.js back end and will save and retrieve note data from a JSON file.
@@ -47,3 +48,5 @@ The following images show the web application's appearance and functionality:
 
 # Application Launch
 [Note Take Application](https://bcsnotetaker.herokuapp.com/)
+
+# Video

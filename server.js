@@ -38,7 +38,21 @@ fs.readFile("db/db.json","utf8", (err, data) => {
 
     app.delete('/api/notes/:id', (req, res) => {
         console.log(`delete Route with id=${req.params.id}`)
-        notes.splice(req.params.id,1);
+        if (notes.length === 1){
+            notes=[];
+        } else {
+            //delete the items base onthe value of the key id and not the index of the array
+            console.log(`before: ${notes}`);
+            console.log(typeof req.params.id);
+            const index=parseInt(req.params.id);
+
+            for (i=0;i<notes.length;i++){
+                if (notes[i].id === index) {
+                    notes.splice(i,1);
+                    console.log(`after : ${notes}`);        
+                }
+            }
+        };
         writeDB('deleted');
         return res.json({});
     });
