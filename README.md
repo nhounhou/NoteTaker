@@ -50,3 +50,4 @@ The following images show the web application's appearance and functionality:
 [Note Take Application](https://bcsnotetaker.herokuapp.com/)
 
 # Video
+![noteTaker Video](./Assets/NoteTakerVideo.gif)
