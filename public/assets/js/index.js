@@ -72,6 +72,7 @@ const renderActiveNote = () => {
 const handleNoteSave = () => {
   noteItems = document.querySelectorAll('.list-group-item');
   // if (noteItems.length === 1) {
+    // generating the value if the Key if based on the id value of the last note saved
     if (noteItems[0].innerText === 'No saved Notes') {
       noteId=1;
     } else {
@@ -86,6 +87,7 @@ const handleNoteSave = () => {
   console.log(noteItems);
   console.log(noteId);
   const newNote = {
+    // adding the key id to the note JSON format
     id: noteId,
     title: noteTitle.value,
     text: noteText.value,
